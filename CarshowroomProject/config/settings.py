@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_countries",
     "rest_framework",
-    "customers",
-    "suppliers",
-    "carshowroom",
+    "apps.carshowroom.apps.CarshowroomConfig",
+    "apps.customers.apps.CustomersConfig",
+    "apps.suppliers.apps.SuppliersConfig",
+    "apps.core.apps.CoreConfig",
 ]
 
 MIDDLEWARE = [
@@ -115,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = 'Europe/Minsk'
 
 USE_I18N = True
 
@@ -131,3 +133,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = 'core.BaseUser'
